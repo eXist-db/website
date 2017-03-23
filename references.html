@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8"/>
+        <title>eXistdb - References</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="High-performance native XML database engine and all-in-one solution for application building."/>
+        <meta name="description" content="eXist Solutions Long Term Support (LTS) and Service Level Agreement (SLA) order form"/>
+        <meta name="keywords" lang="en" content="eXistdb, nosql, database, xml, xquery, xforms, xsl, forms, web, development, TEI"/>
+        <meta name="keywords" lang="de" content="eXistdb, nosql, database, xml, xquery, xforms, xsl, forms, web, entwicklung, TEI"/>
+        <meta name="author" content="Wolfgang Meier"/>
+        <meta name="author" content="Joern Turner"/>
+        <meta name="author" content="Tobias Krebs"/>
+        <meta name="author" content="Lars Windauer"/>
+        <meta name="robots" content="index, follow"/>
+        <!-- build:template
+        <%= minifiedCss %>
+        /build -->
+
+        <!-- build:remove -->
+        <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="components/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="components/animate.css/animate.min.css" rel="stylesheet"/><!--<link href="resources/css/exist.css" rel="stylesheet"/>-->
+        <link href="resources/css/styles.css" rel="stylesheet"/>
+        <!-- /build -->
+
+        <!-- todo: concat minified css files into one -->
+        <link href="http://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="references"><!--
+        ###################################################################################
+        ######################### Navigation ##############################################
+        ###################################################################################
+        -->
+        <div role="navigation" class="navbar navbar-fixed-top nav-animate">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"/>
+                    </button>
+                    <a href="index.html" class="navbar-brand">
+                        <img src="resources/img/existdb.gif" alt="eXistdb" class="logo"/>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"><!--About dropdown-->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About
+                                <span class="caret"/>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="index.html#features" data-toggle="collapse" data-target=".navbar-collapse">Features</a>
+                                </li>
+                                <li>
+                                    <a href="timetunnel.html">Timeline</a>
+                                </li>
+                                <li>
+                                    <a href="references.html">References</a>
+                                </li>
+
+                                <!--
+                                                                <li class="divider"></li>
+                                                                <li><a href="#">One more separated link</a></li>
+                                -->
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support
+                                <span class="caret"/>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="index.html#subscriptions" data-toggle="collapse" data-target=".navbar-collapse">Enterprise Subscription</a>
+                                </li>
+                                <li>
+                                    <a href="index.html#subscriptions" data-toggle="collapse" data-target=".navbar-collapse">Support Plans</a>
+                                </li>
+                                <li>
+                                    <a href="training.html">Training</a>
+                                </li>
+                            </ul>
+                        </li><!--                        <li>
+                                                    <a href="index.html#subscriptions" data-toggle="collapse" data-target=".navbar-collapse">Subscriptions</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="index.html#downloads" data-toggle="collapse" data-target=".navbar-collapse">Download</a>
+                                                </li>
+                                                -->
+                        <li class="dropdown">
+                            <a href="../demo/index.html" data-toggle="collapse" data-target=".navbar-collapse">Demo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community
+                                <span class="caret"/>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="index.html#downloads" data-toggle="collapse" data-target=".navbar-collapse">Download</a>
+                                </li>
+                                <li>
+                                    <a accesskey="d" href="../doc/" data-toggle="collapse" data-target=".navbar-collapse">Documentation - Crtl+Alt+d</a>
+                                </li>
+                                <li>
+                                    <a href="../wiki/blogs/eXist/" data-toggle="collapse" data-target=".navbar-collapse">Blog</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container -->
+        </div>
+        <div class="exist-social-vertical nav navbar-nav navbar-right hidden-xs hidden-md hidden-lg">
+            <a href="https://github.com/eXist-db/exist" title="Github">
+                <i class="fa fa-github-square"/>
+            </a>
+            <a href="http://www.linkedin.com/groups?trk=groups_members-h-dsc&amp;gid=35624&amp;goback=%2Eanp_35624_1397120975460_1" title="LinkedIn">
+                <i class="fa fa-linkedin-square"/>
+            </a>
+            <a href="https://twitter.com/existdb" title="Twitter">
+                <i class="fa fa-twitter-square"/>
+            </a>
+            <a href="https://plus.google.com/u/0/s/existdb" title="Google+">
+                <i class="fa fa-google-plus-square"/>
+            </a><!--        <a href="#" title="Facebook">
+                <i class="fa fa-facebook-square"/>
+            </a> -->
+            <a href="https://www.youtube.com/results?search_query=exist-db" title="Youtube">
+                <i class="fa fa-youtube"/>
+            </a><!--
+                <a href="mailto:info@existsolutions.com" title="Mail">
+                    <i class="fa fa-envelope"/>
+                </a>
+    -->
+        </div><!--
+        ###################################################################################
+        ######################### END Navigation ##########################################
+        ###################################################################################
+        -->
+        <a name="home"/><!--
+        ###################################################################################
+        ######################### References page content #################################
+        ################################################################################### -->
+        <div class="stripe testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-10   ">
+                        <h1>What people are saying...</h1>
+                        <ul>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/Office-of-the-Historian-logo_500x165.gif" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        eXistdb is at the core of the <a href="http://history.state.gov" class="org" target="_blank">Office of the Historian’s</a>
+                                        open government and digital history initiatives. It powers our
+                                        public website, allowing visitors to search and browse instantly
+                                        through nearly a hundred thousand archival government documents.
+                                        On the fly, it transforms our XML documents and query results into
+                                        web pages, PDFs, ebooks, and APIs and data feeds. Its support of the
+                                        high-level XQuery programming language and its elegant suite of
+                                        development tools empower me and my fellow historians to analyze
+                                        data and answer research questions.
+                                    </p>
+                                    <p>
+                                        The open source nature of eXistdb has delivered far more value
+                                        to us than its simply being “free”; its active, welcoming, expert
+                                        collaborative user community has helped us learn, discover eXistdb’s
+                                        plethora of capabilities, and find the best solutions to our research
+                                        and publishing challenges. eXistdb belongs in the toolkit of all
+                                        digital humanities, open government, and publishing projects.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Joe Wicentowski</span>
+                                    <span class="title">Historian</span>
+                                    <span class="department">Office of the Historian</span>
+                                    <span class="organisation">U.S. Department of State</span>
+                                </p>
+                                <a name="onkopedia"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        We are using eXistdb on our <a class="org" href="http://onkopedia.com">onkopedia.com</a> publishing platform.
+                                        The reliability and performance of eXistdb is outstanding and the
+                                        competent and fast support by its community is awesome. eXistdb
+                                        was a major key factor to the success in  our project and we will
+                                        likely continue with eXistdb in upcoming projects.
+                                    </p><!--                            <i class="fa fa-quote-right"></i>-->
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Andreas Jung</span>
+                                    <span class="title">Lead developer of zopyx.com</span>
+                                    <span class="title">Founder of the XML Director project</span>
+                                    <span class="title">Major contractor for onkopedia.com project</span>
+                                </p>
+                                <a name="UoV"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        At the <span class="org">University of Victoria Humanities Computing and Media Centre</span>, we use eXistdb in a dozen or more projects, including a couple of fairly high-profile ones:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <a href="http://mapoflondon.uvic.ca">http://mapoflondon.uvic.ca</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://bcgenesis.uvic.ca">http://bcgenesis.uvic.ca</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://graves.uvic.ca/graves/site/index.xml">http://graves.uvic.ca/graves/site/index.xml</a>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        We've been using eXistdb since version 0.9, and the third project on that list dates back to 2003.
+                                    </p><!--                            <i class="fa fa-quote-right"></i>-->
+                                    <p>
+                                        All applications above are
+                                        <a href="http://www.tei-c.org/">
+                                            <img class="tei" src="http://www.tei-c.org/About/Badges/powered-by-TEI.gif" alt="Powered by TEI"/>
+                                        </a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Martin Holmes</span>
+                                    <span class="department">University of Victoria Humanities Computing and Media Centre</span>
+                                </p>
+                                <a name="oppidoc"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <a href="http://www.oppidoc.fr">
+                                            <img src="resources/img/oppidoc-logo646x220.png" class="img-responsive" width="200px"/>
+                                        </a>
+                                    </figure>
+                                    <p>
+                                        eXistdb offers a unique environment for full stack XML web application development.
+                                        To create applications ranging from web sites with CMS-like feature to collaborative workflows,
+                                        we at <span class="org">Oppidoc</span> started by developing an XQuery layer to map every URL of an application to a pipeline.
+                                        The pipeline consists of:
+                                    </p>
+                                    <ul>
+                                        <li>i) an XQuery model that performs requests and updates to the database,</li>
+                                        <li>ii) an XSLT presentation layer that generates views and </li>
+                                        <li>iii) a final XQuery layer that copies the views into factorized page templates.</li>
+                                    </ul>
+                                    <p>
+                                        eXistdb has been extremely efficient and easy to configure to implement and deploy
+                                        this architecture because of its native support for XQuery, XSLT and a simple pipelining language.
+                                        Moreover the XQuery profiling tools have proven invaluable in identifying bottlenecks and correcting them.
+                                        Overall eXistdb helps us to streamline our development process and quickly adapt to our customer's needs
+                                        and evolving data models thanks to its ability to run as a data and application container.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Stéphane Sire</span>
+                                    <span class="title">Founder of Oppidoc</span>
+                                </p>
+                                <a name="obdurodon"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/repertorium-plectogram.png" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        The <a href="http://repertorium.obdurodon.org" class="org">Repertorium of Old Bulgarian Language and Letters</a>
+                                        is a TEI-based metadata project developed in order to support the machine-assisted
+                                        comparison of the contents of medieval Slavic miscellany manuscripts.
+                                        Manuscript descriptions are stored as individual TEI XML documents inside eXistdb,
+                                        with queries and visualizations managed with XQuery. The accompanying image illustrates
+                                        a plectogram, a graphic visualization in SVG generated with XQuery for exploring
+                                        similarities across the contents of manuscripts. The project, directed by Anisava Miltenova,
+                                        is based at the Institute of Literature of the Bulgarian Academy of Sciences.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">David Birnbaum</span>
+                                    <span class="organisation">obdurodon.org</span>
+                                </p>
+                                <a name="tbrc"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/><!--                                    <figure>--><!--                                        <img src="resources/img/Akademie-Logo.jpg" class="img-responsive" width="200px"/>--><!--                                    </figure>--><!--                                    <figure>--><!--                                        <img src="resources/img/DFD-Logo.png" class="img-responsive" width="200px"/>--><!--                                    </figure>-->
+                                    <p>
+                                        The <a href="http://tbrc.org" class="org" target="_blank">Tibetan Buddhist Resource Center</a> (TBRC) holds the world’s single largest collection
+                                        of Tibetan texts—nearly 10 million scanned pages and over 11,000 Unicode Tibetan texts.
+                                        TBRC.org provides online access to over 4,000 users via an Ajax client written in Google
+                                        Web Toolkit as a front-end to the eXistdb.
+                                    </p>
+                                    <p>
+                                        TBRC has used eXistdb since 2004 to store
+                                        the catalog for the texts in the library as well as a knowledgebase of persons and
+                                        places that provide a cultural context for Tibetan literature. The integration of
+                                        eXistdb with the Lucene full-text indexing has created a powerful framework with
+                                        which TBRC.org is able to provide searchable access to the library via comprehensive
+                                        tables of contents in Tibetan and a large collection of texts that have been input
+                                        in Unicode in centers around the world. Our production system currently runs eXistdb 2.1.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Chris Tomlinson</span>
+                                    <span class="title">Senior Technical Staff Member</span>
+                                    <span class="organisation">Tibetan Buddhist Resource Center</span>
+                                    <span class="location">Cambridge, Massachusetts</span>
+                                </p>
+                                <a name="pillow"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/PastedGraphic-2.png" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        I’ve built a specialised Job-processing system aimed at Small-business users who need
+                                        custom solutions on the web. This system allows them to record all their Client data
+                                        and use it in documents generated from templates in MS Word, Open Office Text or
+                                        Spreadsheet, Email, or plain text - and more to come. In particular, I’m targeting
+                                        businesses with a distributed workforce who have tried CRMs and/or custom solutions
+                                        in MS Access, Filemaker or similar RDBMS and haven’t been able to effectively manage their data.
+                                    </p>
+                                    <p>
+                                        eXistdb’s wide range of features has allowed me to build a comprehensive system.
+                                        In comparison to other open-source systems, a key feature of eXistdb is the permissions
+                                        system which can be applied right down to the file level (including binary files).
+                                        This has allowed me to build a multi-tenanted system.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Alister Pillow</span>
+                                </p>
+                                <a name="DDoS"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <div class="figure-wrapper">
+                                        <figure>
+                                            <img src="resources/img/Akademie-Logo.jpg" class="img-responsive"
+                                                 width="200px"/>
+                                        </figure>
+                                        <figure>
+                                            <a href="http://www.namenforschung.net/dfd/" target="_blank"><img src="resources/img/DFD-Logo.png" class="img-responsive" width="200px"/></a>
+                                        </figure>
+                                    </div>
+                                    <p>
+                                        eXistdb and oXygen XML Editor – a great combination for our <a href="http://www.namenforschung.net/dfd/" class="org" target="_blank">Digital Dictionary of Surnames in Germany</a>.
+                                        The entries – about 850.000 – are stored in an eXistdb database and edited from within oXygen.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Franziska Horn</span>
+                                    <span class="title">Technical Staff Member</span>
+                                    <span class="organisation">Technische Universität Darmstadt</span>
+                                </p>
+                                <a name="scoutdragon"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        <a href="http://scoutdragon.com" class="org">ScoutDragon</a> initially started as a baseball research project by a group of baseball enthusiasts
+                                        including writers, agents, scouts, fans, fantasy owners, and even former players.
+                                        This group realized a need for original English content, data, and research on baseball players in Asia.
+                                    </p>
+                                    <p>
+                                        All data for multiple sports covering multiple sporting leagues is stored in XML
+                                        documents within eXistdb in a schema derived from IPTC’s SportsML, most
+                                        extensions having to do with providing multilingual support of players
+                                        so that information may be displayed in English, Japanese, Korean, and/or
+                                        Chinese. XQuery has proven to be a fantastic language for not just
+                                        transforming the vast quantities of data to web pages, but also for data
+                                        analysis and the generation of sabermetrics-based statistics.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Michael Westbay</span>
+                                    <span class="title">Lead Programmer/System Administrator</span>
+                                    <span class="organisation">ScoutDragon.com</span>
+                                    <span class="location">Japan</span>
+                                </p>
+                                <a name="semanta"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        <a class="org" href="http://www.semantacorp.com/" target="_blank">Semanta’s</a>
+                                        core business is metadata in business intelligence. Part of our
+                                        concern is parsing metadata from reporting platforms. Many of these reporting
+                                        platforms supply their metadata in large XML chunks, which we then need to
+                                        further process efficiently. A typical example is our IBM Cognos connector,
+                                        where we use eXistdb heavily to extract details of report structures and data
+                                        sources. Originally we thought we would only use eXistdb for prototyping, but
+                                        ultimately, we have used embedded eXistdb in the production.
+                                    </p>
+                                    <p/>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">David Voňka</span>
+                                    <span class="title">Programmer</span>
+                                    <span class="organisation">Semanta</span>
+                                    <span class="location">Czech Republic</span>
+                                </p>
+                                <a name="kantl"/>
+                            </li>
+
+
+
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        The <a href="http://ctb.kantl.be/" class="org" target="_blank">Centre for Document Studies and Scholarly Editing
+                                        of the Royal Academy of Dutch Language and Literature</a>  (Ghent, Belgium)
+                                        develops rich scholarly collections of textual data, and publishes them as
+                                        digital text editions and language corpora. From the start, we have fully
+                                        embraced open standards and publication technologies. At first, we started out
+                                        with the Cocoon XML publication framework, which back then nicely integrated
+                                        with eXistdb (or the other way round) for efficient querying of XML content.
+                                        Since the introduction of eXistdb’s MVC framework, we have extended our use of
+                                        eXistdb as a full application server, not only for querying the indexed data,
+                                        but also driving the entire application and presentation logic.
+                                    </p>
+                                    <p>
+                                        The texts we’re querying (or rather, processing) with eXistdb are mostly
+                                        document-centered XML documents that are conformant to the schemas developed
+                                        by the Text Encoding Initiative (TEI). Depending on the specific edition
+                                        project, they are enriched with metadata such as named entities, editorial
+                                        annotations, and sometimes highly specific textual documentation (such as
+                                        critical apparatuses documenting variation among text versions).
+                                        Though our texts are mostly in Dutch, we try to connect and contribute to
+                                        methodological good practice emerging in the interesting field that is Digital
+                                        Humanities. Some of our exemplar projects include a collection of letters in
+                                        relation to the Belgian literary journal Van Nu en Straks; a digital edition
+                                        comparing 20 versions of De trein der traagheid, a novel by the Belgian
+                                        novelist Johan Daisne; and a digital edition of the first Dutch dialect
+                                        survey in the Flemish region by Pieter Willems (developed between 1885–1890).
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Ron Van den Branden</span>
+                                    <span class="organisation">Centre for Scholarly Editing and Document Studies of the Royal Academy of Dutch Language and Literature</span>
+                                    <span class="location">Ghent</span>
+                                    <span class="location">Belgium</span>
+                                </p>
+                                <a name="uniheidelberg"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        At the <a href="http://www.asia-europe.uni-heidelberg.de/en/" class="org" target="_blank">Cluster of Excellence “Asia and Europe in a Global Context,”</a>
+                                        we use eXistdb to store our collections of MODS (bibliographical)
+                                        and VRA (image metadata) records. We have developed two open source
+                                        applications for this, Tamboti and Ziziphus, where our records can be
+                                        searched and edited. Both applications are built entirely in XML
+                                        technologies (XQuery and XForms) using eXistdb and make use of LDAP
+                                        integration and detailed user rights management.</p>
+                                    <p/>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="organisation">Heidelberg Research Architecture,
+                                        Cluster of Excellence “Asia and Europe in a Global Context,”
+                                    </span>
+                                    <span class="organisation">The University of Heidelberg</span>
+                                    <span class="location">Heidelberg</span>
+                                    <span class="location">Germany</span>
+                                </p>
+                                <a name="haptix"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        <a href="http://www.h2flowgame.com/#/w" class="org" target="_blank">Haptix Games</a>  is a video game and interactive
+                                        application development and publishing studio, and we have been a
+                                        Microsoft shop for as long as I can remember. We have leveraged C#, MVC,
+                                        and IIS for user experience; WCF, OData, and BizTalk for message
+                                        exchanges; MSSQL and Entity Framework for storage. That is a lot of
+                                        acronyms and even more complexity under the hood. Prototyping a concept
+                                        usually involved all abovementioned technologies, while the final solution
+                                        release was either expensive, inflexible, or did not meet client expectations.
+                                    </p>
+                                    <p>
+                                        With the adoption of eXistdb our development and release workflows have
+                                        become highly agile and more competitive. Utilizing eXistdb as a
+                                        dark-data solution platform and not just another XML database allowed us
+                                        to eliminate 80% of our Microsoft code base just by taking advantage of the
+                                        built-in web server, low-level data manipulation using XQuery 3.0, restful
+                                        data exchange, and native storage capabilities.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Chris Misztur</span>
+                                    <span class="title">CTO</span>
+                                    <span class="organisation">Haptix Games</span>
+                                    <span class="location">Chicago, Illinois</span>
+                                </p>
+                                <a name="easydita"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/easyDita_logo.png" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        <a href="http://easydita.com/" class="org" target="_blank">easyDITA</a> is an end-to-end solution for
+                                        collaboratively authoring, managing, and publishing content
+                                        using the DITA XML standard. Companies utilize easyDITA to reduce the
+                                        cost and time to market to deliver content in a variety of formats and
+                                        languages. By leveraging eXistdb, easyDITA is able to deliver customers
+                                        exceptional ability to search, manage, localize, and publish content.
+                                        eXistdb’s schemaless design and flexible indexing system makes it easy to
+                                        support customizations like reporting, analytics, and new content models
+                                        without sacrificing performance or doing major redesigns.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Casey Jordan</span>
+                                    <span class="title">cofounder</span>
+                                    <span class="organisation">easyDITA, Jorsek LLC</span>
+                                    <span class="location">Rochester, New York</span>
+                                </p>
+                                <a name="xmlteam"/>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        We at <span class="org">XML Team Solutions</span> help media
+                                        and entertainment companies integrate sports news and data feeds. These
+                                        feeds are predominantly XML. We use eXistdb for two things:
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            Regulating and preparing vendor web service XML for transmission to
+                                            clients. Scheduled jobs access remote web services, preprocess, and
+                                            pass on XML via HTTP Client to our main feed processor.
+                                        </li>
+                                        <li>
+                                            API to drive graphics for live television broadcast.
+                                            API built from RESTXQ pro‐ vides live updates of results to
+                                            broadcaster clients. Currently uses JMS to sync from one write
+                                            DB to two load-balanced readers. Also has an XForms
+                                            “beat the feed” live score updater which mimics the incoming
+                                            feed in case feed vendor is delayed.
+                                        </li>
+                                    </ol>
+                                    <p>
+                                        We recently delivered a project for BBC Sports to deliver live
+                                        broadcast information. eXistdb met all the requirements for speed,
+                                        cost, and reliability for an API to deliver up-to-date scores
+                                        and statistics to BBC television.
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Paul Kelly</span>
+                                    <span class="title">Director of Software Development</span>
+                                    <span class="organisation">XML Team Solutions Corp</span>
+                                    <span class="location">Canada</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+        ###################################################################################
+        ######################### END Homepage content ####################################
+        ###################################################################################
+        --><!--
+        ###################################################################################
+        ######################### Footer ##################################################
+        ###################################################################################
+        -->
+        <a name="imprintTarget"/>
+        <div class="band-imprint stripe animated slideOutRight closed">
+            <div class="container">
+                <a name="imprint"/>
+                <h2>Legal Notice</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <address>
+                            <strong>eXist Solutions GmbH</strong>
+                            <br/>
+                            Dr.-Ludwig-Opel-Straße 50<br/>
+                            65428 Rüsselsheim<br/>
+                        </address>
+                        <address>
+                            Telephone: +49 61 422 103 07<br/>
+                            General Enquiries: info@existsolutions.com<br/>
+                            Technical Support: support@existsolutions.com<br/>
+                        </address>
+                    </div>
+                    <div class="col-md-6">
+                        <address>
+                            <strong>Commercial Register</strong>
+                            <br/>
+                            Amtsgericht Freiburg i.Br.<br/>
+                            HRB 713975<br/>
+                            Director: Wolfgang Meier
+                        </address>
+                        <address>
+                            <strong>Tax Information</strong>
+                            <br/>
+                            USt-Id Nr. DE273180763<br/>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#imprintTarget" id="imprint">Legal Notice</a> |
+                        <a href="doc/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="copyright">© eXist Solutions 2016</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--
+        ###################################################################################
+        ######################### End Footer ##############################################
+        ###################################################################################
+        -->
+
+        <!-- build:js resources/js/exist.min.js -->
+        <script src="components/jquery/dist/jquery.min.js" type="text/javascript"/>
+        <script src="components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"/>
+        <!-- /build -->
+
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-53355249-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

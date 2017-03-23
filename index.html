@@ -1,0 +1,962 @@
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8"/>
+        <title>eXistdb - The Open Source Native XML Database</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="High-performance native XML database engine and all-in-one solution for application building."/>
+        <meta name="description" content="eXist Solutions Long Term Support (LTS) and Service Level Agreement (SLA) order form"/>
+        <meta name="keywords" lang="en" content="eXistdb, nosql, database, xml, xquery, xforms, xsl, forms, web, development"/>
+        <meta name="keywords" lang="en" content="eXistdb, nosql, database, xml, xquery, xforms, xsl, forms, web, entwicklung"/>
+        <meta name="author" content="eXist Solutions GmbH"/>
+        <meta name="robots" content="index, follow"/>
+        <!-- build:template
+        <%= minifiedCss %>
+        /build -->
+        <!-- build:remove -->
+        <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="components/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="components/animate.css/animate.min.css" rel="stylesheet"/>
+        <link href="components/bxslider-4/dist/jquery.bxslider.css" rel="stylesheet"/>
+        <link href="resources/css/styles.css" rel="stylesheet"/>
+        <!-- /build -->
+
+        <!-- todo: concat minified css files into one -->
+        <link href="http://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!--
+        ###################################################################################
+        ######################### Navigation ##############################################
+        ###################################################################################
+        -->
+        <div role="navigation" class="navbar navbar-fixed-top nav-animate">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"/>
+                    </button>
+                    <a href="index.html" class="navbar-brand">
+                        <img src="resources/img/existdb.gif" alt="eXistdb" class="logo"/>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"><!--About dropdown-->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About
+                                <span class="caret"/>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#features" data-toggle="collapse" data-target=".navbar-collapse">Features</a>
+                                </li>
+                                <li>
+                                    <a href="timetunnel.html">Timeline</a>
+                                </li>
+                                <li>
+                                    <a href="references.html">References</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support
+                                <span class="caret"/>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#subscriptions" data-toggle="collapse" data-target=".navbar-collapse">Enterprise Subscription</a>
+                                </li>
+                                <li>
+                                    <a href="#subscriptions" data-toggle="collapse" data-target=".navbar-collapse">Support Plans</a>
+                                </li>
+                                <li>
+                                    <a href="training.html">Training</a>
+                                </li>
+                            </ul>
+                        </li><!--                        <li>
+                                                    <a href="index.html#subscriptions" data-toggle="collapse" data-target=".navbar-collapse">Subscriptions</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="index.html#downloads" data-toggle="collapse" data-target=".navbar-collapse">Download</a>
+                                                </li>
+                                                -->
+                        <li class="dropdown">
+                            <a href="../demo/index.html" data-toggle="collapse" data-target=".navbar-collapse">Demo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community
+                                <span class="caret"/>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="index.html#downloads" data-toggle="collapse" data-target=".navbar-collapse">Download</a>
+                                </li>
+                                <li>
+                                    <a accesskey="d" href="../doc/" data-toggle="collapse" data-target=".navbar-collapse">Documentation - Crtl+Alt+d</a>
+                                </li>
+                                <li>
+                                    <a href="../wiki/blogs/eXist/" data-toggle="collapse" data-target=".navbar-collapse">Blog</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="exist-social-horizontal nav navbar-nav navbar-right hidden-sm">
+                        <a href="https://github.com/eXist-db/exist" title="Github" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-github-square"/>
+                        </a>
+                        <a href="http://www.linkedin.com/groups?trk=groups_members-h-dsc&amp;gid=35624&amp;goback=%2Eanp_35624_1397120975460_1" title="LinkedIn" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-linkedin-square"/>
+                        </a>
+                        <a href="https://twitter.com/existdb" title="Twitter" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-twitter-square"/>
+                        </a>
+                        <a href="https://plus.google.com/u/0/s/existdb" title="Google+" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-google-plus-square"/>
+                        </a><!--                        <a href="#" title="Facebook">
+                                                    <i class="fa fa-facebook-square"/>
+                                                </a> -->
+                        <a href="https://www.youtube.com/results?search_query=exist-db" title="Youtube" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-youtube"/>
+                        </a><!--
+                                                <a href="mailto:info@existsolutions.com" title="Mail" data-toggle="collapse" data-target=".navbar-collapse">
+                                                    <i class="fa fa-envelope"/>
+                                                </a>
+                        -->
+                    </div>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container -->
+        </div>
+        <div class="exist-social-vertical nav navbar-nav navbar-right hidden-xs hidden-md hidden-lg">
+            <a href="https://github.com/eXist-db/exist" title="Github">
+                <i class="fa fa-github-square"/>
+            </a>
+            <a href="http://www.linkedin.com/groups?trk=groups_members-h-dsc&amp;gid=35624&amp;goback=%2Eanp_35624_1397120975460_1" title="LinkedIn">
+                <i class="fa fa-linkedin-square"/>
+            </a>
+            <a href="https://twitter.com/existdb" title="Twitter">
+                <i class="fa fa-twitter-square"/>
+            </a>
+            <a href="https://plus.google.com/u/0/s/existdb" title="Google+">
+                <i class="fa fa-google-plus-square"/>
+            </a><!--        <a href="#" title="Facebook">
+                <i class="fa fa-facebook-square"/>
+            </a> -->
+            <a href="https://www.youtube.com/results?search_query=exist-db" title="Youtube">
+                <i class="fa fa-youtube"/>
+            </a><!--
+                <a href="mailto:info@existsolutions.com" title="Mail">
+                    <i class="fa fa-envelope"/>
+                </a>
+    -->
+        </div><!--
+        ###################################################################################
+        ######################### END Navigation ##########################################
+        ###################################################################################
+        -->
+        <a name="home"/><!--
+        ###################################################################################
+        ######################### Homepage content ########################################
+        ###################################################################################
+        --><!--<div class="stripe teaser">-->
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="left col-md-8 col-sm-8 col-xs-12">
+                        <h1>Vitamins for<br/> your Applications</h1>
+                        <p class="subtitle hidden-xs">
+                            Try the all-in-one solution for application building.
+                        </p>
+                        <p class="pic-wrapper">
+                            <img class="open-source-logo img-responsive" src="resources/img/osi_black_and_white_light_backgrounds_logo.png" alt="Open Source" title="eXistdb is certified Open Source Software"/>
+                        </p>
+                        <p class="oss-remark">eXistdb is Open Source Software licensed under the LGPL</p>
+                        <p>
+                            <button class="btn btn-primary btn-lg downloadbtn">Download eXistdb</button>
+                        </p>
+                    </div>
+                    <div class="right col-md-4 col-sm-4 col-xs-12">
+                        <img class="mainPic img-responsive" src="resources/img/fruit.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+        <div class="stripe prague">
+            <div class="container">
+                <div class="col-md-6">
+                    <h2>See latest eXistdb talks at XML Prague 2015</h2>
+                    <p>Thanks go to Loren Cahlander for providing the videos</p>
+                </div>
+                <div class="col-md-6">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLoPqZyoc1BVZop2szksOMSePVQ_mktsoe" frameborder="0" allowfullscreen="true"/>
+                </div>
+            </div>
+        </div> --><!--</div>-->
+        <div class="band-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sx-4 news-bg">
+                        <h3>Latest News</h3><!--                        <span>--><!--                            <i class="fa fa-bullhorn"/>--><!--                        </span>-->
+                        <ul class="news"/>
+                        <a href="timetunnel.html">
+                            <div class="timeline-link-wrapper">
+                                <span class="icon-left">
+                                    <i class="fa fa-history"/>
+                                </span>
+                                <p>More news on the timeline.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8 timeline-col"/>
+                </div>
+            </div>
+        </div>
+        <div class="stripe testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-10">
+                        <h2>What people are saying...</h2>
+                        <ul class="bxslider">
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/Office-of-the-Historian-logo_500x165.gif" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        eXistdb is at the core of the <a href="http://history.state.gov" class="org" target="_blank">Office of the Historian’s</a>
+                                        open government and digital history initiatives. It powers our
+                                        public website, allowing visitors to search and browse instantly
+                                        through nearly a hundred thousand archival government documents. <a href="references.html">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Joe Wicentowski</span>
+                                    <span class="title">Historian</span>
+                                    <span class="department">Office of the Historian</span>
+                                    <span class="organisation">U.S. Department of State</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        We are using eXistdb on our <a class="org" href="http://onkopedia.com">onkopedia.com</a> publishing platform.
+                                        The reliability and performance of eXistdb is outstanding and the
+                                        competent and fast support by its community is awesome. <a href="references.html#onkopedia">(...)</a>
+                                    </p><!--                            <i class="fa fa-quote-right"></i>-->
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Andreas Jung</span>
+                                    <span class="title">Lead developer of zopyx.com</span>
+                                    <span class="title">Founder of the XML Director project</span>
+                                    <span class="title">Major contractor for onkopedia.com project</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        At the <span class="org">University of Victoria Humanities Computing and Media Centre</span>, we use eXistdb in a dozen or more projects, including a couple of fairly high-profile ones:
+                                        <a href="references.html#UoV">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Martin Holmes</span>
+                                    <span class="department">University of Victoria Humanities Computing and Media Centre</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <a href="http://www.oppidoc.fr">
+                                            <img src="resources/img/oppidoc-logo646x220.png" class="img-responsive" width="200px"/>
+                                        </a>
+                                    </figure>
+                                    <p>
+                                        eXistdb offers a unique environment for full stack XML web application development.
+                                        To create applications ranging from web sites with CMS-like feature to collaborative workflows,
+                                        we at <span class="org">Oppidoc</span> started by developing 
+                                        <a href="references.html#oppidoc">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Stéphane Sire</span>
+                                    <span class="title">Founder of Oppidoc</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/repertorium-plectogram.png" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        The <a href="http://repertorium.obdurodon.org" class="org">Repertorium of Old Bulgarian Language and Letters</a>
+                                        is a TEI-based metadata project developed in order to support the machine-assisted
+                                        comparison of the contents of medieval Slavic miscellany manuscripts.
+                                        <a href="references.html#obdurodon">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">David Birnbaum</span>
+                                    <span class="organisation">obdurodon.org</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        The <a href="http://tbrc.org" class="org" target="_blank">Tibetan Buddhist Resource Center</a> (TBRC) holds the world’s single largest collection
+                                        of Tibetan texts—nearly 10 million scanned pages and over 11,000 Unicode Tibetan texts.
+                                        TBRC.org provides online access to over 4,000 users
+                                        <a href="references.html#tbrc">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Chris Tomlinson</span>
+                                    <span class="title">Senior Technical Staff Member</span>
+                                    <span class="organisation">Tibetan Buddhist Resource Center</span>
+                                    <span class="location">Cambridge, Massachusetts</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/PastedGraphic-2.png" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        I’ve built a specialised Job-processing system aimed at Small-business users who need
+                                        custom solutions on the web. This system allows them to record all their Client data
+                                        and use it in documents generated from templates in MS Word, Open Office Text or
+                                        Spreadsheet, Email, or plain text
+                                        <a href="references.html#pillow">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Alister Pillow</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <div class="figure-wrapper">
+                                        <figure>
+                                            <img src="resources/img/Akademie-Logo.jpg" class="img-responsive" width="200px"/>
+                                        </figure>
+                                        <figure>
+                                            <a href="http://www.namenforschung.net/dfd/" target="_blank"><img src="resources/img/DFD-Logo.png" class="img-responsive" width="200px"/></a>
+                                        </figure>
+                                    </div>
+                                    <p>
+                                        eXistdb and oXygen XML Editor – a great combination for our <a href="http://www.namenforschung.net/dfd/" class="org" target="_blank">Digital Dictionary of Surnames in Germany</a>.
+                                        The entries – about 850.000 – are stored in an eXistdb database and edited from within oXygen.
+                                        <a href="references.html#DDoS">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Franziska Horn</span>
+                                    <span class="title">Technical Staff Member</span>
+                                    <span class="organisation">Technische Universität Darmstadt</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/><!--                                    <figure>--><!--                                        <img src="resources/img/Akademie-Logo.jpg" class="img-responsive" width="200px"/>--><!--                                    </figure>--><!--                                    <figure>--><!--                                        <img src="resources/img/DFD-Logo.png" class="img-responsive" width="200px"/>--><!--                                    </figure>-->
+                                    <p>
+                                        <a href="http://scoutdragon.com" class="org">ScoutDragon</a> initially started as a baseball research project by a group of baseball enthusiasts
+                                        including writers, agents, scouts, fans, fantasy owners, and even former players.
+                                        
+                                        <a href="references.html#scoutdragon">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Michael Westbay</span>
+                                    <span class="title">Lead Programmer/System Administrator</span>
+                                    <span class="organisation">ScoutDragon.com</span>
+                                    <span class="location">Japan</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        <a class="org" href="http://www.semantacorp.com/" target="_blank">Semanta’s</a>
+                                        core business is metadata in business intelligence. Part of our
+                                        concern is parsing metadata from reporting platforms. 
+                                        
+                                        <a href="references.html#semanta">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">David Voňka</span>
+                                    <span class="title">Programmer</span>
+                                    <span class="organisation">Semanta</span>
+                                    <span class="location">Czech Republic</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        The <a href="http://ctb.kantl.be/" class="org" target="_blank">Centre for Document Studies and Scholarly Editing
+                                        of the Royal Academy of Dutch Language and Literature</a>  (Ghent, Belgium)
+                                        develops rich scholarly collections of textual data, 
+                                        <a href="references.html#kantl">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Ron Van den Branden</span>
+                                    <span class="organisation">Centre for Scholarly Editing and Document Studies of the Royal Academy of Dutch Language and Literature</span>
+                                    <span class="location">Ghent</span>
+                                    <span class="location">Belgium</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        At the <a href="http://www.asia-europe.uni-heidelberg.de/en/" class="org" target="_blank">Cluster of Excellence “Asia and Europe in a Global Context,”</a>
+                                        we use eXistdb to store our collections of MODS (bibliographical)
+                                        and VRA (image metadata) records. 
+                                        <a href="references.html#uniheidelberg">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="organisation">Heidelberg Research Architecture,
+                                        Cluster of Excellence “Asia and Europe in a Global Context,”
+                                    </span>
+                                    <span class="organisation">The University of Heidelberg</span>
+                                    <span class="location">Heidelberg</span>
+                                    <span class="location">Germany</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        <a href="http://www.h2flowgame.com/#/w" class="org" target="_blank">Haptix Games</a>  is a video game and interactive
+                                        application development and publishing studio, and we have been a
+                                        Microsoft shop for as long as I can remember. 
+                                        <a href="references.html#haptix">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Chris Misztur</span>
+                                    <span class="title">CTO</span>
+                                    <span class="organisation">Haptix Games</span>
+                                    <span class="location">Chicago, Illinois</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <figure>
+                                        <img src="resources/img/easyDita_logo.png" class="img-responsive" width="200px"/>
+                                    </figure>
+                                    <p>
+                                        <a href="http://easydita.com/" class="org" target="_blank">easyDITA</a> is an end-to-end solution for
+                                        collaboratively authoring, managing, and publishing content
+                                        using the DITA XML standard. 
+                                        <a href="references.html#easydita">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Casey Jordan</span>
+                                    <span class="title">cofounder</span>
+                                    <span class="organisation">easyDITA, Jorsek LLC</span>
+                                    <span class="location">Rochester, New York</span>
+                                </p>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <i class="fa fa-quote-left"/>
+                                    <p>
+                                        We [at <span class="org">XML Team Solutions</span>] help media
+                                        and entertainment companies integrate sports news and data feeds. These
+                                        feeds are predominantly XML. We use eXistdb for two things:
+                                        <a href="references.html#xmlteam">(...)</a>
+                                    </p>
+                                </blockquote>
+                                <p class="source">
+                                    <span class="name">Paul Kelly</span>
+                                    <span class="title">Director of Software Development</span>
+                                    <span class="organisation">XML Team Solutions Corp</span>
+                                    <span class="location">Canada</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="band1 stripe">
+            <div class="container">
+                <div class="row books-row" itemscope="itemscope" itemtype="http://www.schema.org/Book">
+                    <meta itemprop="author" content="Adam Retter"/>
+                    <meta itemprop="author" content="Erik Siegel"/>
+                    <div class="col-md-6 book-title-wrapper"><!--
+                    <span class="quote">
+                        <i class="fa fa-quote-left"/>
+                    </span> -->
+                        <h3 itemprop="name">eXist</h3>
+                        <h4 itemprop="description">a NoSQL Document Database and Application Platform</h4>
+                        <p>
+                            Book available as eBook or printed version from <a href="http://www.jdoqocy.com/click-7654993-11290546?sid=&amp;url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920026525.do%3Fcmp%3Daf-webplatform-books-videos-product_cj_auwidget636_0636920026525_%25zp" target="_blank">O'Reilly.com</a>
+                        </p>
+                    </div>
+                    <div class="col-md-6 cover">
+                        <a class="exist-book" title="eXist O'Reilly Book" href="http://www.jdoqocy.com/click-7654993-11290546?sid=&amp;url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920026525.do%3Fcmp%3Daf-webplatform-books-videos-product_cj_auwidget636_0636920026525_%25zp" target="_blank">
+                            <img itemprop="image" src="resources/img/book-cover.jpg" alt="eXist Book"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container stripe">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Screencasts</h2>
+                    <p>click to play on Youtube</p>
+                </div>
+            </div>
+            <div class="row videos">
+                <div class="col-md-4" itemprop="video" itemscope="itemscope" itemtype="http://schema.org/VideoObject">
+                    <a href="https://www.youtube.com/watch?v=xvMau2aHRDo" itemprop="contentUrl">
+                        <meta itemprop="name" content="Getting started"/>
+                        <img itemprop="thumbnailUrl" class="img-responsive big" src="resources/img/getstarted.png" title="Getting started" alt=""/>
+                    </a>
+                </div>
+                <div class="col-md-4" itemprop="video" itemscope="itemscope" itemtype="http://schema.org/VideoObject">
+                    <a href="https://www.youtube.com/watch?v=o0KRyFM9kck" itemprop="contentUrl">
+                        <meta itemprop="name" content="First development steps"/>
+                        <img class="img-responsive small" src="resources/img/first-dev-steps.png" title="First development steps" alt="First development steps"/>
+                    </a>
+                </div>
+                <div class="col-md-4" itemprop="video" itemscope="itemscope" itemtype="http://schema.org/VideoObject">
+                    <a href="https://www.youtube.com/watch?v=U7Cd9h6UPoc" itemprop="contentUrl">
+                        <img itemprop="thumbnailUrl" class="img-responsive small" src="resources/img/eXide2.png" title="New features in eXide 2" alt="new features in eXide 2"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="band-features stripe">
+            <div class="container">
+                <a name="features"/>
+                <h2>Features &amp; Facts</h2>
+                <div class="row features">
+                    <div class="col-sm-3 featureOne">1</div>
+                    <div class="col-sm-6 colTwo">
+                        <h3>One Step Installation</h3>
+                        <p>With just one installation step you get everything you need. No need to setup and
+                            configure multiple system components.</p>
+                        <h3>One Platform</h3>
+                        <p>Get a feature-complete platform that covers everything to build even complex
+                            applications.</p>
+                        <h3>One Data Model</h3>
+                        <p>
+                            XML across all layers makes mapping technologies superfluous and increases productivity.
+                        </p>
+                    </div>
+                </div>
+                <div class="band-more expandable animated closed slideOutLeft">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3>Schema-less Database</h3>
+                            <p>
+                                The high-performance native XML database engine stores textual or binary data and
+                                documents
+                                without requiring a database schema.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Rapid Prototyping</h3>
+                            <p>Upload your data and start writing code immediately.</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Application Packages</h3>
+                            <p>
+                                eXistdb applications are packaged as single archive files that are installed directly
+                                in
+                                the database. Deployment, upgrading to new versions and distribution become a breeze.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Open</h3>
+                            <p>
+                                eXistdb is fully based upon Open Standards and Open Source making it a future-proof and
+                                substainable choice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3>Browser-based IDE</h3>
+                            <p>
+                                A Browser-based IDE allows managing and editing all artifacts belonging to an
+                                application.
+                                Syntax-coloring, code-completion and error-checking help to get it right.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Forms Framework</h3>
+                            <p>
+                                Being a complete solution, eXistdb tightly integrates with XForms for complex form
+                                development.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Rich Stack of Libraries</h3>
+                            <p>Develop entire applications in XQuery using eXistdb's rich set of libraries.</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Community Driven</h3>
+                            <p>Being Open Source since 2001, eXistdb development has always been driven by the
+                                needs of a large user community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="band-toggle-more">
+            <div class="more toggle-more closed"><!--                <span class="more-text">click for more</span> -->
+                <span class="toggleLTS">
+                    <span class="icon-more" data-icon-name="more"/>
+                </span>
+            </div>
+        </div>
+        <div class="band-subscription stripe">
+            <div class="container commercial">
+                <a name="subscriptions"/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Subscriptions &amp; Support</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <small>brought to you by</small>
+                        <img class="existsolutions-logo img-responsive" src="resources/img/existsolutions.svg" alt="exist solutions"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="option lts">
+                            <h4>Long Term Support (LTS) Release</h4>
+                            <p>Quality-assured</p>
+                            <p>Service Packs</p>
+                            <p>Notifications</p>
+                            <p>Early Access </p>
+                            <p class="price">
+                                12 Months Subscription<br/>
+                                starts at 1200 € per instance
+
+                            </p>
+                            <div class="button-bar">
+                                <a class="btn btn-primary" href="https://support.existsolutions.com/exist/apps/subscription/index.xhtml" tabindex="-1">Order now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="option sla">
+                            <h4>Support Plans</h4>
+                            <p>LTS required</p>
+                            <p>Guaranteed Response Time, Issue Management,<br/> Professional Services, Feature
+                                Requests
+                            </p>
+                            <p>Rebate on additional Support, Development,<br/> Training + Consulting</p>
+                            <p id="advanced" class="package">Advanced Plan 3.500 €</p>
+                            <p id="enterprise" class="package">Enterprise Plan 13.000 €</p>
+                            <div class="button-bar">
+                                <a class="btn btn-primary" href="https://support.existsolutions.com/exist/apps/subscription/index.xhtml" tabindex="-1">Order now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--
+            todo: move this message into its context - the subscription form and place it a more prominent place there
+                            <p class="payment">
+
+                                Payment via bank transfer only: you will receive an invoice at the end of the
+                                registration process. For other payment options, please
+                                <a href="mailto:support@existsolutions.com">contact us</a> directly.</p>
+                            <hr/>
+        -->
+                <div class="band-benefits expandable animated slideOutLeft closed">
+                    <div id="subscriptionDetail" class="row">
+                        <div class="col-md-12"><!--<img id="existSolutionsLogo" src="resources/img/existsolutions-logo.png"/>-->
+                            <h2>Benefits</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Long Term Reliability</h3>
+                            <p>LTS versions will be supported for at least 2 years after initial release.</p>
+                            <h3>Extra Quality Assured</h3>
+                            <p>Subscriptions versions of eXist give you a reliable foundation for your
+                                applications.
+                                New features and extensions will be added only after extensive testing and are
+                                guaranteed to
+                                be compatible with your version.
+                            </p>
+                            <h3>Professional Services</h3>
+                            <p>Get access to consulting, support and training services from the makers of eXist.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Notifications</h3>
+                            <p>Monitoring Open Source projects can be time-consuming. With a subscription you will
+                                get
+                                informed about new features and releases that might be of interest for you.
+                            </p>
+                            <h3>Issue Management</h3>
+                            <p>With a subscription and a support plan your issues will be acknowledged within a
+                                guaranteed
+                                response time of one day*.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="band-support expandable animated slideOutLeft closed">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Support Plans</h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Plan Comparison</th>
+                                            <th>LTS<sup>**</sup>
+                                            </th>
+                                            <th>Advanced</th>
+                                            <th>Enterprise</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tableTtile">Included Support days<sup>***</sup>
+                                                <small>per subscription year</small>
+                                            </td>
+                                            <td> -</td>
+                                            <td>
+                                                <span class="label label-info">3</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-warning">12</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableTtile">Support Channels</td>
+                                            <td> -</td>
+                                            <td>
+                                                <span class="label label-info">web</span>
+                                                <span class="label label-info">email</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-warning">web</span>
+                                                <span class="label label-warning">email</span>
+                                                <span class="label label-warning">phone</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableTtile">Rebate
+                                                <small>on additional Services<sup>***</sup>
+                                                </small>
+                                            </td>
+                                            <td> -</td>
+                                            <td>
+                                                <span class="label label-info">5%</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-warning">10%</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="starred">* Monday to Friday between 10:00 and 18:00 GMT+1</p>
+                            <p class="starred">** The LTS version does not include support services. However support
+                                services
+                                are available on <a href="mailto:support@existsolutions.com?subject=Support-Request">email
+                                    request</a>.</p>
+                            <p class="starred">*** includes consulting, development and training</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="band-toggle-more">
+            <div class="more toggle-lts closed"><!--                <span class="more-text">click for more</span> -->
+                <span class="toggleFeatures">
+                    <span class="icon-more" data-icon-name="moreLTS"/>
+                </span>
+            </div>
+        </div><!--
+            <div class="row subtext">
+                <span class="marker">!</span>
+                For inquiries about individual arrangements and training offerings please contact <a
+                    href="mailto:support@existsolutions.com">eXistSolutions</a>.
+            </div>
+            <br/>
+            <a name="downloads"/>
+
+
+
+            -->
+        <div class="band-download stripe">
+            <div class="container">
+                <a name="downloads"/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 id="download">Download</h2><!--
+                                            <p id="doDownload" class="downloadBtn">
+                                                <a class="btn btn-large" href="http://sourceforge.net/projects/exist/files/Stable/2.1/" target="_blank">
+                                                    Download eXistdb 2.1</a>
+                                                    </p>
+                        -->
+                        <a href="https://bintray.com/existdb/releases/exist/2.2/view">
+                            <button class="btn btn-default download-btn stable" type="button">
+                                <span class="status">Stable Release</span>
+                                <span class="icon">
+                                    <i class="fa fa-download"/>
+                                </span>
+                                <span class="exist-version">Version 2.2</span>
+                            </button>
+                        </a>
+                        <a href="https://bintray.com/existdb/releases/exist/3.0.RC1/view/files">
+                            <button class="btn btn-default download-btn rc" type="button">
+                                <span class="status">Release Candidate</span>
+                                <span class="icon">
+                                    <i class="fa fa-download"/>
+                                </span>
+                                <span class="exist-version">Version 3.0 RC1</span>
+                                <span class="version-warning">not recommended<br/> for production</span>
+                            </button>
+                        </a>
+                        <a href="https://github.com/exist-db/mvn-repo">
+                            <button class="btn btn-default download-btn maven" type="button">
+                                <span class="status">Maven Artifacts</span>
+                                <span class="icon">
+                                    <i class="fa fa-github"/>
+                                </span>
+                                <span class="exist-version">Version 3.0 RC1</span>
+                            </button>
+                        </a>
+                        <a href="http://static.adamretter.org.uk/exist-nightly/">
+                            <button class="btn btn-default download-btn nightly-builds" type="button">
+                                <span class="status">Nightly Builds</span>
+                                <span class="icon">
+                                    <i class="fa fa-moon-o"/>
+                                </span>
+                                <span class="exist-version">dummytext</span>
+                                <span class="version-warning">Use at your own risk</span>
+                            </button>
+                        </a>
+                        <p>
+                            All versions of eXistdb are <a href="../doc/legal.xml" target="_blank">Open Source</a> and
+                            may
+                            be used
+                            in academic, non-commercial and commercial applications.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Community</h3>
+                        <p>
+                            If you'd like to contribute, ask questions or are looking for the sourcecode please see our <a href="https://github.com/eXist-db/exist">github</a> page
+                            for details.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a id="poweredby" href="http://existdb.org"/>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div><!--
+        ###################################################################################
+        ######################### END Homepage content ####################################
+        ###################################################################################
+        --><!--
+        ###################################################################################
+        ######################### Footer ##################################################
+        ###################################################################################
+        -->
+        <a name="imprintTarget"/>
+        <div class="band-imprint stripe animated slideOutRight closed">
+            <div class="container">
+                <a name="imprint"/>
+                <h2>Legal Notice</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <address>
+                            <strong>eXist Solutions GmbH</strong>
+                            <br/>
+                            Bonndorfer Str. 45<br/>
+                            79853 Lenzkirch<br/>
+                        </address>
+                        <address>
+                            Telephone: +49 61 422 103 07<br/>
+                            General Enquiries: info@existsolutions.com<br/>
+                            Technical Support: support@existsolutions.com<br/>
+                        </address>
+                    </div>
+                    <div class="col-md-6">
+                        <address>
+                            <strong>Commercial Register</strong>
+                            <br/>
+                            Amtsgericht Freiburg i.Br.<br/>
+                            HRB 713975<br/>
+                            Director: Wolfgang Meier
+                        </address>
+                        <address>
+                            <strong>Tax Information</strong>
+                            <br/>
+                            USt-Id Nr. DE273180763<br/>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#imprintTarget" id="imprint">Legal Notice</a> |
+                        <a href="doc/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="copyright">© eXist Solutions 2017</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--
+        ###################################################################################
+        ######################### End Footer ##############################################
+        ###################################################################################
+        -->
+
+        <!-- build:js resources/js/exist.min.js -->
+        <script src="components/jquery/dist/jquery.min.js" type="text/javascript"/>
+        <script src="components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"/>
+        <script src="components/snap.svg/dist/snap.svg-min.js" type="text/javascript"/>
+        <script src="components/bxslider-4/dist/jquery.bxslider.min.js" type="text/javascript"/>
+        <script src="resources/js/svgicons.js" type="text/javascript"/>
+        <script src="resources/js/exist-home.js" type="text/javascript"/>
+        <!-- /build -->
+
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-53355249-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

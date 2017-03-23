@@ -1,0 +1,34 @@
+/******* animation mixins ********/
+.animation(@name,@duration) {
+  animation:@name @duration;
+  -moz-animation:@name @duration;
+  -webkit-animation:@name @duration;
+  -o-animation:@name @duration;
+}
+
+
+.animation-delay(@duration){
+  animation-delay:@duration;
+  -moz-animation-delay:@duration;
+  -webkit-animation-delay:@duration;
+  -o-animation-delay:@duration;
+}
+.animation-fill-mode(@mode){
+  animation-fill-mode:@mode;
+  -moz-animation-fill-mode:@mode;
+  -webkit-animation-fill-mode:@mode;
+  -o-animation-fill-mode:@mode;
+}
+.animation-timing-function(@function){
+  animation-timing-function:@function;
+  -moz-animation-timing-function:@function;
+  -webkit-animation-timing-function:@function;
+  -o-animation-timing-function:@function;
+}
+
+.animation-duration(@duration){
+  animation-duration:@duration;
+  -moz-animation-duration:@duration;
+  -webkit-animation-duration:@duration;
+  -o-animation-duration:@duration;
+}

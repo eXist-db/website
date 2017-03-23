@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8"/>
+        <title>eXist-db - The Open Source Native XML Database</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="High-performance native XML database engine and all-in-one solution for application building."/>
+        <meta name="description" content="eXist LTS release announcement"/>
+        <meta name="keywords" lang="en" content="eXist-db, nosql, database, xml, xquery, xforms, xsl, forms, web, development"/>
+        <meta name="keywords" lang="en" content="eXist-db, nosql, database, xml, xquery, xforms, xsl, forms, web, entwicklung"/>
+        <meta name="author" content="Wolfgang Meier"/>
+        <meta name="author" content="Joern Turner"/>
+        <meta name="author" content="Tobias Krebs"/>
+        <meta name="author" content="Lars Windauer"/>
+        <meta name="robots" content="index, follow"/>
+
+        <!-- build:template
+        <%= minifiedCss %>
+        /build -->
+
+
+        <!-- build:remove -->
+        <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="components/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="components/animate.css/animate.min.css" rel="stylesheet"/>
+        <link href="resources/css/exist.css" rel="stylesheet"/>
+        <link href="resources/css/styles.css" rel="stylesheet"/>
+        <!-- /build -->
+        <style>
+            .press{
+                margin-top:20px;
+                background:rgba(250,250,250,0.3);
+                padding-top:30px;
+                padding-bottom:30px;
+            }
+            p{
+                color: #3c3b3d;
+            }
+            footer{
+                position: fixed;
+                bottom:0;
+                width: 100%;
+            }
+            figure{
+                display: inline-block;
+                margin: 2em;
+                float:left;
+                width:auto;
+            }
+            figcaption{
+                color:inherit;
+                padding-top:10px;
+                color:#4c4b4d;
+            }
+            .band-press{
+                background: url(resources/img/background2.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        </style>
+
+        <!-- todo: concat minified css files into one -->
+        <link href="http://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div role="navigation" class="navbar navbar-fixed-top nav-animate">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"/>
+                    </button>
+                    <a href="index.html" class="navbar-brand">
+                        <img src="resources/img/existdb.gif" alt="eXistdb" class="logo"/>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <div class="exist-social-horizontal nav navbar-nav navbar-right hidden-sm">
+                        <a href="https://github.com/eXist-db/exist" title="Github" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-github-square"/>
+                        </a>
+                        <a href="http://www.linkedin.com/groups?trk=groups_members-h-dsc&amp;gid=35624&amp;goback=%2Eanp_35624_1397120975460_1" title="LinkedIn" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-linkedin-square"/>
+                        </a>
+                        <a href="https://twitter.com/existdb" title="Twitter" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-twitter-square"/>
+                        </a>
+                        <a href="https://plus.google.com/u/0/s/existdb" title="Google+" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-google-plus-square"/>
+                        </a>
+                        <!--                        <a href="#" title="Facebook">
+                                                    <i class="fa fa-facebook-square"/>
+                                                </a> -->
+                        <a href="https://www.youtube.com/results?search_query=exist-db" title="Youtube" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-youtube"/>
+                        </a>
+<!--
+                        <a href="mailto:info@existsolutions.com" title="Mail" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-envelope"/>
+                        </a>
+-->
+                    </div>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container -->
+        </div>
+        <div class="exist-social-vertical nav navbar-nav navbar-right hidden-xs hidden-md hidden-lg">
+            <a href="https://github.com/eXist-db/exist" title="Github">
+                <i class="fa fa-github-square"/>
+            </a>
+            <a href="http://www.linkedin.com/groups?trk=groups_members-h-dsc&amp;gid=35624&amp;goback=%2Eanp_35624_1397120975460_1" title="LinkedIn">
+                <i class="fa fa-linkedin-square"/>
+            </a>
+            <a href="https://twitter.com/existdb" title="Twitter">
+                <i class="fa fa-twitter-square"/>
+            </a>
+            <a href="https://plus.google.com/u/0/s/existdb" title="Google+">
+                <i class="fa fa-google-plus-square"/>
+            </a>
+            <!--        <a href="#" title="Facebook">
+                        <i class="fa fa-facebook-square"/>
+                    </a> -->
+            <a href="https://www.youtube.com/results?search_query=exist-db" title="Youtube">
+                <i class="fa fa-youtube"/>
+            </a>
+<!--
+            <a href="mailto:info@existsolutions.com" title="Mail">
+                <i class="fa fa-envelope"/>
+            </a>
+-->
+        </div>
+        <a name="home"/>
+        <div class="band-press stripe">
+            <div class="container press">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h2>eXist LTS 2.1.6 released</h2>
+                        <p>
+                            Ginsheim, 2 July 2014
+                        </p>
+                        <p>
+                            eXist Solutions GmbH released eXist LTS version 2.1.6. Since the introduction of Long Term Support (LTS) in January 2014 this is already the 6th quality release of cherry-picked improvements and enhancements.
+                        </p>
+                        <p>
+                            eXist LTS addresses the needs of enterprise-scale users that require a reliable and supported version of the open source version.
+                        </p>
+                        <p>
+                            eXistdb is a full-fledged NoSQL application server that combines a powerful database with packaged applications, a browser-based IDE and all tools to manage and support the application lifecycle.
+                        </p>
+                    </div>
+                    <div class="col-md-7">
+                        <figure style="text-align: center;">
+                            <img class="img img-responsive" alt="Monex Monitoring App" src="resources/img/monex.png"/>
+                            <figcaption>New Monitoring and Profiling Interface</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            As a rapid web-development platform eXistdb offers a fine-grained security model, templating, a REST and WebDAV interface and the capability to store any kind of data without applying a schema to the database.
+                            </p>
+                        <p>A rich set of extensions allow to use features like pdf- and chart-generation, a powerful forms framework, access to SQL databases and many many more. eXistdb offers the building blocks to build modern, responsive mobile-ready applications in less time.
+                        </p>
+                        <p>
+                            Apart from various bug fixes, LTS 2.1.6 focuses on query performance and improvements to the backup system. 2.1.6 also introduces the new 'Monex' application for monitoring and profiling remote or local servers.
+
+                            eXist LTS is available as a subscription at <a href="http://exist-db.org">http://exist-db.org</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="band-imprint stripe animated slideOutRight closed">
+            <div class="container">
+                <h2>Imprint</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <address>
+                            <strong>eXist Solutions GmbH</strong>
+                            <br/>
+                            Dr.-Ludwig-Opel-Straße 50<br/>
+                            65428 Rüsselsheim<br/>
+                        </address>
+                        <address>
+                            Telephone: +49 61 422 103 07<br/>
+                            General Enquiries: info@existsolutions.com<br/>
+                            Technical Support: support@existsolutions.com<br/>
+                        </address>
+                    </div>
+                    <div class="col-md-6">
+                        <address>
+                            <strong>Commercial Register</strong>
+                            <br/>
+                            Amtsgericht Darmstadt<br/>
+                            HRB 89454<br/>
+                            Director: Wolfgang Meier
+                        </address>
+                        <address>
+                            <strong>Tax Information</strong>
+                            <br/>
+                            USt-Id Nr. DE273180763<br/>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#imprint" id="imprint">Imprint</a> |
+                        <a href="doc/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="copyright">© eXist Solutions 2016</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- build:js resources/js/press.min.js -->
+        <script src="components/jquery/dist/jquery.min.js" type="text/javascript"/>
+        <script src="components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"/>
+        <script type="text/javascript" src="resources/js/press.js"/>
+        <!-- /build -->
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-53355249-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

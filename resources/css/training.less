@@ -1,0 +1,452 @@
+@import "exist";
+
+/******* animation mixins ********/
+/*
+there's an issue with importing of mixins. These don't seem to get processed (it's not clear wether this is due to less processing in exist or external. Otherwise below mixins could be moved out into a separate file.
+*/
+
+body#training {
+  background: black;
+  font-size:18px;
+}
+
+
+
+#training {
+  .animation(fadein, 1s);
+  .animation-delay(1s);
+  .animation-fill-mode(forwards);
+  background: white;
+  
+  a{
+      color:#428bca;
+  }
+
+  ul, li, p {
+    color: @gray1;
+  }
+  .jumbotron {
+    margin-top: 60px;
+    margin-bottom: 0;
+    h1 {
+      color: @blue;
+      text-align: center;
+    }
+    .subtitle1 {
+      font-size: 24px;
+      text-align: center;
+      color: white;
+
+      .animation(fadeSubtitle,3s);
+      .animation-fill-mode(forwards);
+    }
+    .subtitle2 {
+      .animation(fadeInSubtitle2,1s);
+      .animation-delay(5s);
+      .animation-fill-mode(forwards);
+
+      font-size: 24px;
+      text-align: center;
+      color: black;
+      margin-top: -45px;
+
+    }
+
+    .right {
+      text-align: center;
+
+      .animation(fadePic,1s);
+      .animation-delay(1s);
+      .animation-fill-mode(forwards)
+    }
+  }
+  .fa-lightbulb-o, .fa-university {
+    font-size: 200px;
+    color: #ffeb3b;
+  }
+
+  .table .table {
+    background: transparent;
+  }
+
+  .dates{
+    font-size:0.8em;
+  }
+
+  .terms{
+    font-size:0.6em;
+    padding:10px 20px;
+    border:1px solid @gray3;
+    color:@gray3;
+    margin-bottom:50px;
+    opacity: 0;
+    .animation(fadeCourses ,1s);
+    .animation-delay(2s);
+    .animation-fill-mode(forwards);
+
+
+    .container{
+      width:100%;
+    }
+    .row{
+      margin-bottom:5px;
+
+      .col-md-1{
+        font-weight:700;
+      }
+    }
+
+  }
+  
+  .price{
+      font-size:1.1em;
+      margin-bottom:0;
+  }
+  .price-small{
+      font-size:0.6em;
+      margin:0;
+  }
+}
+
+/* helper mixins */
+
+.fadein(){
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: white;
+  }
+}
+
+
+@keyframes fadein {
+  .fadein();
+}
+
+@-moz-keyframes fadein {
+  /* Firefox */
+  .fadein();
+}
+
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  .fadein();
+}
+
+@-o-keyframes fadein {
+  /* Opera */
+  .fadein();
+}
+
+
+.fadeSubtitle(){
+  0% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.0;
+    display: none;
+  }
+}
+
+
+@keyframes fadeSubtitle {
+  .fadeSubtitle();
+}
+
+@-moz-keyframes fadeSubtitle {
+  .fadeSubtitle();
+}
+
+@-webkit-keyframes fadeSubtitle {
+  /* Safari and Chrome */
+  .fadeSubtitle();
+}
+
+@-o-keyframes fadeSubtitle {
+  .fadeSubtitle();
+}
+
+.fadePic(){
+  0% {
+    opacity: 0.0;
+    .animation-timing-function(ease);
+  }
+  100% {
+    opacity: 0.8;
+    .animation-timing-function(easeOut);
+  }
+}
+
+@keyframes fadePic {
+  .fadePic();
+}
+
+@-moz-keyframes fadePic {
+  .fadePic();
+}
+
+@-webkit-keyframes fadePic {
+  /* Safari and Chrome */
+  .fadePic();
+}
+@-o-keyframes fadePic{
+  .fadePic();
+}
+
+.fadeCourse(){
+  0% {
+    opacity: 0.0;
+    .animation-timing-function(ease);
+  }
+  100% {
+    opacity: 0.8;
+    .animation-timing-function(easeOut);
+  }
+}
+
+@keyframes fadeCourses {
+  .fadeCourse();
+}
+@-moz-keyframes fadeCourses {
+  .fadeCourse();
+}
+@-webkit-keyframes fadeCourses {
+  .fadeCourse();
+}
+@-o-keyframes fadeCourses {
+  /* Safari and Chrome */
+  .fadeCourse();
+}
+
+
+.fadeinSubtitle2(){
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+    color: red;
+  }
+}
+@keyframes fadeinSubtitle2 {
+  .fadeinSubtitle2();
+}
+@-moz-keyframes fadeinSubtitle2 {
+  .fadeinSubtitle2();
+}
+@-webkit-keyframes fadeinSubtitle2 {
+  .fadeinSubtitle2();
+}
+@-o-keyframes fadeinSubtitle2 {
+  .fadeinSubtitle2();
+}
+
+.courses-heading {
+  margin-bottom: 50px;
+}
+
+
+.courses-container, .special, .dates-container {
+  opacity: 0;
+  .animation(fadeCourses ,1s);
+  .animation-delay(2s);
+  .animation-fill-mode(forwards);
+}
+
+.special {
+  margin-bottom: 50px;
+}
+.fa {
+  color: @blue;
+}
+i {
+  margin-right: 10px;
+}
+.courses {
+
+  .course-name {
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: @gray5;
+    background: @blue;
+    padding: 10px;
+    border-radius: 3px;
+    cursor:pointer;
+
+    .fa {
+      float: right;
+      font-size: 28px;
+      color: @gray1;
+    }
+    .fa-angle-down {
+      color: white;
+      font-weight: bold;
+    }
+
+  }
+
+  .hiddenRow {
+    padding: 0;
+    background:whitesmoke;
+
+    .accordian-body {
+      padding-top: 20px;
+      padding: 10px;
+    }
+
+    p {
+      color: @gray1;
+    }
+
+  }
+  h3 {
+    color: black;
+  }
+  ul {
+    padding: 0 0 0 18px;
+    margin-bottom:0;
+
+  }
+}
+
+
+/*
+    Calendar related styles below.
+*/
+.calendar{
+    .animation-delay(2s);    
+}
+
+.calendar-col{
+    margin-bottom:30px;
+}
+#cal-wrapper{
+    margin:0 auto;
+    display:table;
+}
+#cal-wrapper .calendar {
+    border:thin solid #ddd;
+    float:left;
+    margin-right:20px;
+    font-size:0.6em;
+}
+#cal-wrapper .calendar a{
+    text-decoration:underline;
+}
+
+.legend{
+    float:left;
+}
+
+
+.legend{
+    display:table;
+    margin:0 auto;
+    border:1px solid #ddd;
+    list-style:none;
+    padding:5px;
+    font-size:11px;
+    vertical-align:middle;
+    clear:both;
+}
+.label{
+    font-size:18px;
+    display:inline-block;
+    margin-right:10px;
+    border-radius:0;
+}
+
+.calendar .label{
+    font-size:12px;
+    margin:0;
+    font-weight:normal;
+    text-decoration:underline;
+}
+.course-code{
+    width:8px;
+    height:8px;
+    display:inline-block;
+    margin-right:5px;
+}
+.course1{
+    background:@green;
+}
+.course2{
+    background-color:@orange;
+}
+.course3{
+    background-color:@blue;
+}
+.course4{
+    background-color:@purple;
+}
+
+.legend li{
+    float:left;
+    margin-right:10px;
+}
+
+#cal-wrapper {
+    background-color: #fff;
+}
+#cal-wrapper .calendar th {
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    font-weight: normal;
+    background-color: #ccc;
+    color: #666;
+}
+#cal-wrapper .calendar td {
+    border: 1px solid #fff;
+    padding: 2px 6px;
+    width: auto;
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+    vertical-align:top;
+}
+/*Empty Cells*/
+#cal-wrapper table.calendar td.pad {
+    color: #fff;
+    background: #fff;
+    border: 1px solid #fff;
+}
+#cal-wrapper .sunday, #cal-wrapper .saturday {
+    background-color: #fff;
+}
+#cal-wrapper #year {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#cal-wrapper #year:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#cal-wrapper #year li {
+    float: left;
+    padding: 0 30px 15px 0;
+    height: 160px;
+}
+/* LEGEND TABLE STYLES */
+#cal-wrapper table.legend {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    margin-bottom: 25px;
+    background-color: #fff;
+}
+/* CUSTOMIZED CSS */
+#cal-wrapper .calendar caption {
+    margin: 0;
+    padding: 4px 0;
+    font-weight: normal;
+    border-bottom: 1px solid #fff;
+    color: #777777;
+}
+
