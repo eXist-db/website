@@ -429,16 +429,6 @@ module.exports = function (grunt) {
                     'dist/timetunnel.html': ['./timetunnel.html']
                 }
             },
-            training: {
-                options: {
-                    data: {
-                        minifiedCss: '<link href="resources/css/training.min.css" type="text/css" rel="stylesheet"/>'
-                    }
-                },
-                files: {
-                    'dist/training.html': ['./training.html']
-                }
-            },
             references: {
                 options: {
                     data: {

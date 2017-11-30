@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="bricks" basedir=".">
+    <target name="xar" description="creates subscription xar (support.existsolutions.org)">
+        <mkdir dir="${basedir}/build"/>
+        <zip basedir="${basedir}" destfile="${basedir}/build/homepage.xar">
+            <exclude name="build/**"/>
+            <exclude name="node_modules/**"/>
+            <exclude name="dist/bower_components/**"/>
+        </zip>
+    </target>
+    <target name="clean">
+        <delete dir="${basedir}/build"/>
+    </target>
+</project>
