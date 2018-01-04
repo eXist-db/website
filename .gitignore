@@ -3,5 +3,5 @@ nbproject/*
 build/*
 node_modules/*
 dist/*
-components/*
+
 
