@@ -486,6 +486,9 @@ footer {
   background: white;
   text-align: center;
 }
+#cookieDismiss {
+  cursor: pointer;
+}
 /* ++++++++++ social icon bar overwrites to exist.less ++++++++++ */
 /* ++++++++++ social icon bar overwrites to exist.less ++++++++++ */
 /* ++++++++++ social icon bar overwrites to exist.less ++++++++++ */
