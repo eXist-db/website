@@ -1,3 +1,9 @@
+/**
+ * THIS IS A GENERATED FILE
+ * to make changes edit
+ * /exist/apps/homepage/resources/css/exist.less
+ */
+
 /* Application styles could go here - please use a flat matcher design for maximum re-usability */
 /* ++++++++++ color palette ++++++++++ */
 body {
@@ -23,7 +29,6 @@ section {
 }
 p,
 li {
-  color: #efefef;
   letter-spacing: 0.1em;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.4;

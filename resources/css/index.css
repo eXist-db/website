@@ -1,3 +1,9 @@
+/**
+ * THIS IS A GENERATED FILE
+ * to make changes edit
+ * /exist/apps/homepage/resources/css/index.less
+ */
+
 /* ++++++++++ color palette ++++++++++ */
 /* ++++++++++ navbar styles ++++++++++ */
 .navbar,
@@ -465,6 +471,7 @@ footer {
   padding-top: 40px;
   position: relative;
   z-index: 20;
+  margin-bottom: 50px;
 }
 .footer__title {
   color: #fff;

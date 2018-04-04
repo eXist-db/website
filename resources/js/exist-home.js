@@ -1,5 +1,9 @@
 $(function () {
 
+    $('#cookieDismiss').on('click', function(e){
+       $(this).parent().hide();
+    });
+
     $('.bxslider').bxSlider({
         mode:'horizontal',
         controls:false,
