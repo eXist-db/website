@@ -416,16 +416,6 @@ module.exports = function (grunt) {
                 files: {
                     'dist/training.html': ['./training.html']
                 }
-            },
-            autumn: {
-                options: {
-                    data: {
-                        minifiedCss: '<link href="resources/css/index.min.css" type="text/css" rel="stylesheet"/>'
-                    }
-                },
-                files: {
-                    'dist/autumn.html': ['./autumn.html']
-                }
             }
         },
 
