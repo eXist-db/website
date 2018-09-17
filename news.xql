@@ -37,7 +37,7 @@ return
                     else if ($age < xdt:dayTimeDuration("P14D")) then
                         days-from-duration($age) || " days ago"
                     else
-                        format-dateTime($date, "[MNn] [D00] [Y0000]")
+                        format-dateTime($date, "[MNn] [D00], [Y0000]", "en", (), ())
                 }
                 </div>
                 <a href="{$path}/{$entry/wiki:id/string()}">{ $entry/atom:title/string() }</a>
