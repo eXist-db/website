@@ -1,0 +1,38 @@
+notifications:
+  email: false
+
+language: node_js
+
+node_js:
+  - "node"
+
+env:
+  - img=existdb/existdb:latest
+  - img=existdb/existdb:release
+
+services:
+  - docker
+
+cache:
+  npm: true
+  directories:
+    - ~/.cache
+
+before_install:
+  - docker pull $img
+  - docker create  --name exist-ci -p 8080:8080 $img
+
+
+install:
+  - ant
+
+before_script:
+  - docker cp ./build/*.xar exist-ci:exist/autodeploy
+  - docker start exist-ci
+  # exist needs time
+  - sleep 30
+  - docker ps
+
+script:
+  - curl -Is http://localhost:8080/exist/apps/homepage/index.html | grep '200 OK'
+  # - cypress run
