@@ -7,14 +7,17 @@ declare namespace atom="http://www.w3.org/2005/Atom";
 declare option output:method "html5";
 declare option output:media-type "text/html";
 
+import module namespace http = "http://expath.org/ns/http-client";
+
 declare variable $local:WIKI_ROOT := "http://exist-db.org/exist/apps/wiki";
 declare variable $local:FEED := "/blogs/eXist/";
 declare variable $local:LAST_ENTRIES := $local:WIKI_ROOT || "/atom" || $local:FEED || "?count=3";
 
 response:set-header("Cache-Control", "no-cache"),
-let $data := httpclient:get(xs:anyURI($local:LAST_ENTRIES), false(), ())
+let $request := <http:request method="GET" href="{$local:LAST_ENTRIES}"/>
+let $response := http:send-request($request)
 let $entries :=
-    for $entry in $data/httpclient:body//atom:entry
+    for $entry in $response[2]//atom:entry
     let $date := ($entry/atom:updated, $entry/atom:published)[1]
     order by xs:dateTime($date) descending
     return $entry
