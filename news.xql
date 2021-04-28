@@ -9,7 +9,7 @@ declare option output:media-type "text/html";
 
 import module namespace http = "http://expath.org/ns/http-client";
 
-declare variable $local:WIKI_ROOT := "http://exist-db.org/exist/apps/wiki";
+declare variable $local:WIKI_ROOT := "https://exist-db.org/exist/apps/wiki";
 declare variable $local:FEED := "/blogs/eXist/";
 declare variable $local:LAST_ENTRIES := $local:WIKI_ROOT || "/atom" || $local:FEED || "?count=3";
 

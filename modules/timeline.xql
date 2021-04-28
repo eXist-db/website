@@ -15,7 +15,7 @@ response:set-header("Cache-Control", "no-cache"),
 
 let $start := request:get-parameter("start",1)
 let $count := request:get-parameter("count",10)
-let $timelineURLString := "http://exist-db.org/exist/apps/wiki/modules/feeds.xql?feed=eXist;lts&amp;start=" || $start || "&amp;count=" || $count
+let $timelineURLString := "https://exist-db.org/exist/apps/wiki/modules/feeds.xql?feed=eXist;lts&amp;start=" || $start || "&amp;count=" || $count
 let $data := httpclient:get(xs:anyURI($timelineURLString), false(), ())
 let $entries :=
     for $entry in $data/httpclient:body//atom:entry

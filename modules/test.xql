@@ -8,7 +8,7 @@ declare namespace xhtml="http://www.w3.org/1999/xhtml";
 declare option output:method "html5";
 declare option output:media-type "text/html";
 
-declare variable $local:WIKI_ROOT := "http://exist-db.org/exist/apps/wiki";
+declare variable $local:WIKI_ROOT := "https://exist-db.org/exist/apps/wiki";
 declare variable $local:FEED := "/blogs/eXist/";
 declare variable $local:LAST_ENTRIES := $local:WIKI_ROOT || "/atom" || $local:FEED || "?count=3";
 
