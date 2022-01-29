@@ -24,23 +24,24 @@ let $data := http:send-request(
     order by xs:dateTime($date) descending
     return $entry
 
-return $entries
-
 for $entry in $entries
 let $dateStr := ($entry/atom:updated, $entry/atom:published)[1]
 let $date := xs:dateTime($dateStr/text())
 let $age := current-dateTime() - $date
+let $minutesSince := minutes-from-duration($age)
+let $hoursSince := hours-from-duration($age)
+let $daysSince := days-from-duration($age)
 let $path := $local:WIKI_ROOT ||substring-after($entry/atom:link[@type eq 'blog']/@href, "/db/apps/wiki/data")
 let $title := $entry/atom:title/text()
 let $abstract := subsequence($entry/atom:content/xhtml:div//xhtml:p[1],1,1)
 let $image := subsequence($entry/atom:content//xhtml:img[1]/@src,1,1)
 
-let $yeah := 
+let $header := 
     http:send-request(
       <http:request method='head' />,
       (concat($path,"/",$image))
     )
-let $h := $yeah[1]
+let $h := $header[1]
 
 let $checkresult := $h/@status = 200
 
@@ -70,17 +71,18 @@ let $output :=  if(exists($entry/atom:category)) then
             </p>
             <a href="{$path}/{$entry/wiki:id/string()}" class="exist-read-more">Read more</a>
             <span class="exist-date">{
+                
                 if ($age < xdt:dayTimeDuration("PT1H")) then
-                    let $minutes := if (minutes-from-duration($age) = 1) then ' minute' else ' minutes' return
-                    minutes-from-duration($age) || $minutes || " ago"
+                    let $minutes := if ($minutesSince = 1) then ' minute' else ' minutes'
+                        return $minutesSince || $minutes || " ago"
                     
                 else if ($age < xdt:dayTimeDuration("P1D")) then
-                    let $hours := if (hours-from-duration($age) = 1) then ' hour' else ' hours' return
-                    hours-from-duration($age) || $hours || " ago"
+                    let $hours := if ($hoursSince = 1) then ' hour' else ' hours'
+                        return $hoursSince || $hours || " ago"
                     
                 else if ($age < xdt:dayTimeDuration("P14D")) then
-                    let $days := if (days-from-duration($age) = 1) then ' day' else ' days' return
-                        days-from-duration($age) || $days || " ago"
+                    let $days := if ($daysSince = 1) then ' day' else ' days'
+                        return $daysSince || $days || " ago"
                         
                     else
                         format-dateTime($date, "[MNn] [D00] [Y0000]")
