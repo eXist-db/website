@@ -1,10 +1,10 @@
-xquery version "3.0";
+xquery version "3.1";
 
 declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
 declare namespace wiki="http://exist-db.org/xquery/wiki";
 declare namespace atom="http://www.w3.org/2005/Atom";
 declare namespace xhtml="http://www.w3.org/1999/xhtml";
-declare namespace httpclient = "http://exist-db.org/xquery/httpclient";
+declare namespace http="http://expath.org/ns/http-client";
 
 declare option output:method "html5";
 declare option output:media-type "text/html";
@@ -15,10 +15,11 @@ response:set-header("Cache-Control", "no-cache"),
 
 let $start := request:get-parameter("start",1)
 let $count := request:get-parameter("count",10)
-let $timelineURLString := "https://exist-db.org/exist/apps/wiki/modules/feeds.xql?feed=eXist;lts&amp;start=" || $start || "&amp;count=" || $count
-let $data := httpclient:get(xs:anyURI($timelineURLString), false(), ())
-let $entries :=
-    for $entry in $data/httpclient:body//atom:entry
+let $timelineURLString := "https://exist-db.org/exist/apps/wiki/modules/feeds.xql?feed=eXist&amp;start=" || $start || "&amp;count=" || $count
+let $data := http:send-request(
+    <http:request method='get' />,$timelineURLString)
+  let $entries :=
+    for $entry in $data//atom:entry
     let $date := ($entry/atom:updated, $entry/atom:published)[1]
     order by xs:dateTime($date) descending
     return $entry
@@ -27,13 +28,23 @@ for $entry in $entries
 let $dateStr := ($entry/atom:updated, $entry/atom:published)[1]
 let $date := xs:dateTime($dateStr/text())
 let $age := current-dateTime() - $date
+let $minutesSince := minutes-from-duration($age)
+let $hoursSince := hours-from-duration($age)
+let $daysSince := days-from-duration($age)
 let $path := $local:WIKI_ROOT ||substring-after($entry/atom:link[@type eq 'blog']/@href, "/db/apps/wiki/data")
 let $title := $entry/atom:title/text()
-let $abstract := subsequence($entry/atom:content//xhtml:div/xhtml:p[1],1,1)
+let $abstract := head($entry//xhtml:p)
 let $image := subsequence($entry/atom:content//xhtml:img[1]/@src,1,1)
 
-let $yeah := httpclient:head(xs:anyURI(concat($path,"/",$image)),false(),())
-let $checkresult := data($yeah/@statusCode) = 200
+let $header := 
+    http:send-request(
+      <http:request method='head' />,
+      (concat($path,"/",$image))
+    )
+let $h := $header[1]
+
+let $checkresult := $h/@status = 200
+
 
 let $imgOut := if (string-length($image) != 0 and $checkresult) then
     <img src="{$path}/{$image}" class="wow zoomIn" />
@@ -60,12 +71,19 @@ let $output :=  if(exists($entry/atom:category)) then
             </p>
             <a href="{$path}/{$entry/wiki:id/string()}" class="exist-read-more">Read more</a>
             <span class="exist-date">{
+                
                 if ($age < xdt:dayTimeDuration("PT1H")) then
-                    minutes-from-duration($age) || " minutes ago"
+                    let $minutes := if ($minutesSince = 1) then ' minute' else ' minutes'
+                        return $minutesSince || $minutes || " ago"
+                    
                 else if ($age < xdt:dayTimeDuration("P1D")) then
-                    hours-from-duration($age) || " hours ago"
+                    let $hours := if ($hoursSince = 1) then ' hour' else ' hours'
+                        return $hoursSince || $hours || " ago"
+                    
                 else if ($age < xdt:dayTimeDuration("P14D")) then
-                        days-from-duration($age) || " days ago"
+                    let $days := if ($daysSince = 1) then ' day' else ' days'
+                        return $daysSince || $days || " ago"
+                        
                     else
                         format-dateTime($date, "[MNn] [D00] [Y0000]")
             }</span>
@@ -75,4 +93,3 @@ else ()
 
 return
     $output
-
