@@ -69,13 +69,19 @@ let $output :=  if(exists($entry/atom:category)) then
                 {$abstract || ' (...)'}
             </p>
             <a href="{$path}/{$entry/wiki:id/string()}" class="exist-read-more">Read more</a>
-            <span class="exist-date">{
+                        <span class="exist-date">{
                 if ($age < xdt:dayTimeDuration("PT1H")) then
-                    minutes-from-duration($age) || " minutes ago"
+                    let $minutes := if (minutes-from-duration($age) = 1) then ' minute' else ' minutes' return
+                    minutes-from-duration($age) || $minutes || " ago"
+                    
                 else if ($age < xdt:dayTimeDuration("P1D")) then
-                    hours-from-duration($age) || " hours ago"
+                    let $hours := if (hours-from-duration($age) = 1) then ' hour' else ' hours' return
+                    hours-from-duration($age) || $hours || " ago"
+                    
                 else if ($age < xdt:dayTimeDuration("P14D")) then
-                        days-from-duration($age) || " days ago"
+                    let $days := if (days-from-duration($age) = 1) then ' day' else ' days' return
+                        days-from-duration($age) || $days || " ago"
+                        
                     else
                         format-dateTime($date, "[MNn] [D00] [Y0000]")
             }</span>
