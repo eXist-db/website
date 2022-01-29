@@ -33,7 +33,7 @@ let $hoursSince := hours-from-duration($age)
 let $daysSince := days-from-duration($age)
 let $path := $local:WIKI_ROOT ||substring-after($entry/atom:link[@type eq 'blog']/@href, "/db/apps/wiki/data")
 let $title := $entry/atom:title/text()
-let $abstract := subsequence($entry//xhtml:p[1])
+let $abstract := head($entry//xhtml:p)
 let $image := subsequence($entry/atom:content//xhtml:img[1]/@src,1,1)
 
 let $header := 
