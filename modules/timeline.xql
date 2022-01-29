@@ -32,7 +32,7 @@ let $date := xs:dateTime($dateStr/text())
 let $age := current-dateTime() - $date
 let $path := $local:WIKI_ROOT ||substring-after($entry/atom:link[@type eq 'blog']/@href, "/db/apps/wiki/data")
 let $title := $entry/atom:title/text()
-let $abstract := subsequence($entry/atom:content//xhtml:div/xhtml:p[1],1,1)
+let $abstract := subsequence($entry/atom:content/xhtml:div//xhtml:p[1],1,1)
 let $image := subsequence($entry/atom:content//xhtml:img[1]/@src,1,1)
 
 let $yeah := 
