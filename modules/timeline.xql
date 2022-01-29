@@ -69,7 +69,7 @@ let $output :=  if(exists($entry/atom:category)) then
                 {$abstract || ' (...)'}
             </p>
             <a href="{$path}/{$entry/wiki:id/string()}" class="exist-read-more">Read more</a>
-                        <span class="exist-date">{
+            <span class="exist-date">{
                 if ($age < xdt:dayTimeDuration("PT1H")) then
                     let $minutes := if (minutes-from-duration($age) = 1) then ' minute' else ' minutes' return
                     minutes-from-duration($age) || $minutes || " ago"
