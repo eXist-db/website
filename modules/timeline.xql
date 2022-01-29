@@ -13,8 +13,8 @@ declare variable $local:WIKI_ROOT := "http://exist-db.org/exist/apps/wiki";
 
 response:set-header("Cache-Control", "no-cache"),
 
-let $start := 1
-let $count := 2
+let $start := request:get-parameter("start",1)
+let $count := request:get-parameter("count",10)
 let $timelineURLString := "https://exist-db.org/exist/apps/wiki/modules/feeds.xql?feed=eXist&amp;start=" || $start || "&amp;count=" || $count
 let $data := http:send-request(
     <http:request method='get' />,$timelineURLString)
