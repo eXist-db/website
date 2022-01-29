@@ -33,17 +33,23 @@ return
             <li>
                 <div class="date">
                 {
-                    if ($age < xdt:dayTimeDuration("PT1H")) then
-                        minutes-from-duration($age) || " minutes ago"
-                    else if ($age < xdt:dayTimeDuration("P1D")) then
-                        hours-from-duration($age) || " hours ago"
-                    else if ($age < xdt:dayTimeDuration("P14D")) then
-                        days-from-duration($age) || " days ago"
+                if ($age < xdt:dayTimeDuration("PT1H")) then
+                    let $minutes := if ($minutesSince = 1) then ' minute' else ' minutes'
+                        return $minutesSince || $minutes || " ago"
+                    
+                else if ($age < xdt:dayTimeDuration("P1D")) then
+                    let $hours := if ($hoursSince = 1) then ' hour' else ' hours'
+                        return $hoursSince || $hours || " ago"
+                    
+                else if ($age < xdt:dayTimeDuration("P14D")) then
+                    let $days := if ($daysSince = 1) then ' day' else ' days'
+                        return $daysSince || $days || " ago"
+                        
                     else
-                        format-dateTime($date, "[MNn] [D00], [Y0000]", "en", (), ())
+                        format-dateTime($date, "[MNn] [D00] [Y0000]")
                 }
                 </div>
-                <a href="{$path}/{$entry/wiki:id/string()}">{ $entry/atom:title/string() }</a>
+                <a href="{$path}{$entry/wiki:id/string()}">{ $entry/atom:title/string() }</a>
             </li>
     }
     </ul>
