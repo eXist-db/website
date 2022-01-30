@@ -28,6 +28,9 @@ return
         let $dateStr := ($entry/atom:updated, $entry/atom:published)[1]
         let $date := xs:dateTime($dateStr/text())
         let $age := current-dateTime() - $date
+        let $minutesSince := minutes-from-duration($age)
+        let $hoursSince := hours-from-duration($age)
+        let $daysSince := days-from-duration($age)
         let $path := $local:WIKI_ROOT || $local:FEED || substring-after(util:collection-name($entry), "/db/apps/wiki/data")
         return
             <li>
