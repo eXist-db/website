@@ -33,15 +33,15 @@ return
             <li>
                 <div class="date">
                 {
-                if ($age < xdt:dayTimeDuration("PT1H")) then
+                if ($age < xs:dayTimeDuration("PT1H")) then
                     let $minutes := if ($minutesSince = 1) then ' minute' else ' minutes'
                         return $minutesSince || $minutes || " ago"
                     
-                else if ($age < xdt:dayTimeDuration("P1D")) then
+                else if ($age < xs:dayTimeDuration("P1D")) then
                     let $hours := if ($hoursSince = 1) then ' hour' else ' hours'
                         return $hoursSince || $hours || " ago"
                     
-                else if ($age < xdt:dayTimeDuration("P14D")) then
+                else if ($age < xs:dayTimeDuration("P14D")) then
                     let $days := if ($daysSince = 1) then ' day' else ' days'
                         return $daysSince || $days || " ago"
                         
