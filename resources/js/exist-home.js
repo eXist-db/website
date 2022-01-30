@@ -92,7 +92,7 @@ $(function () {
 
 
     $.get("news.xql", function (data) {
-        console.log("news :", data, $(data));
+        // console.log("news :", data, $(data));
         var news = data += "";
         $(".news").replaceWith(news);
         $(".news").fadeIn(1500);
@@ -243,7 +243,7 @@ var scrolltotop = {
 scrolltotop.init()
 
 function toggleSlider(toSlide) {
-    console.log("toggled", toSlide);
+    // console.log("toggled", toSlide);
 
     if (toSlide.hasClass('opened')) {
         /*toSlide.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(e){
