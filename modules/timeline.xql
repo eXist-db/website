@@ -85,7 +85,7 @@ let $output :=  if(exists($entry/atom:category)) then
                         return $daysSince || $days || " ago"
                         
                     else
-                        format-dateTime($date, "[MNn] [D00] [Y0000]")
+                        format-dateTime($date, "[MNn] [D00] [Y0000]", "en", (), ())
             }</span>
         </div>
     </div>
